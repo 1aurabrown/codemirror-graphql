@@ -81,7 +81,9 @@ export default function getHintsAtPosition(schema, sourceText, cursor, token) {
       return hintList(cursor, token, fields.map(field => ({
         text: field.name,
         type: field.type,
-        description: field.description
+        description: field.description,
+        isDeprecated: field.isDeprecated,
+        deprecationReason: field.deprecationReason
       })));
     }
   }
@@ -105,7 +107,9 @@ export default function getHintsAtPosition(schema, sourceText, cursor, token) {
       return hintList(cursor, token, objectFields.map(field => ({
         text: field.name,
         type: field.type,
-        description: field.description
+        description: field.description,
+        isDeprecated: field.isDeprecated,
+        deprecationReason: field.deprecationReason
       })));
     }
   }
